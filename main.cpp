@@ -10,7 +10,6 @@
 #include "imageloader.h"
 #include "intersect.h"
 #include "object.h"
-#include "sphere.h"
 #include "light.h"
 #include "camera.h"
 #include "cube.h"
