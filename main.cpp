@@ -22,13 +22,10 @@ const float BIAS = 0.0001f;
 
 SDL_Renderer* renderer;
 std::vector<Object*> objects;
-//Light light{glm::vec3(8.5, 5.5, 5.0f), 1.5f, Color(237, 192, 73)};
 std::vector<Light> lights = {
-    //{glm::vec3(8.5, 5.5, 5.0f), 1.0f, Color(237, 130, 64)},
     {glm::vec3(6.5, 2.0, -1.0f), 1.5f, Color(230, 208, 158)},
-    //{glm::vec3(2, 3, -2.0f), 0.5f, Color(237, 130, 64)}
 };
-Camera camera(glm::vec3(7, 5.5, 5.0f), glm::vec3(3.0f, 0.0f, -2.0f), glm::vec3(0.0f, 1.0f, 0.0f), 10.0f);
+Camera camera(glm::vec3(7.5, 5.5, 5.0f), glm::vec3(2.5f, 1.0f, -2.0f), glm::vec3(0.0f, 1.0f, 0.0f), 3.0f);
 
 
 void point(glm::vec2 position, Color color) {
@@ -202,8 +199,6 @@ void setUp() {
 
     objects.push_back(new Cube(glm::vec3(2.0f, 1.0f, -2.0f), 1.0f, tnt));
 
-    
-
 }
 
 void render() {
@@ -278,7 +273,7 @@ int main(int argc, char* argv[]) {
     ImageLoader::loadImage("dirt_rail2", "block/dirt_rail2.png");
     ImageLoader::loadImage("tnt", "block/tnt_side.png");
     ImageLoader::loadImage("tnt_top", "block/tnt_top.png");
-    ImageLoader::loadImage("water", "pack.png");
+    ImageLoader::loadImage("water", "block/water.png");
     ImageLoader::loadImage("lamp", "block/redstone_lamp.png");
 
     int frameCount = 0;
@@ -288,9 +283,6 @@ int main(int argc, char* argv[]) {
     setUp();
 
     while (running) {
-
-        //light.position = camera.position;
-        //light.position.x -= 0.1f;
 
         while (SDL_PollEvent(&event)) {
             if (event.type == SDL_QUIT) {
@@ -313,7 +305,6 @@ int main(int argc, char* argv[]) {
                         break;
                  }
             }
-
 
         }
 

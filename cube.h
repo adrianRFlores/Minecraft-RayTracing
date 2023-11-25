@@ -36,9 +36,8 @@ public:
 
     glm::vec3 point = rayOrigin + dist * rayDirection;
 
-    // Calculate the normal based on the face hit
     glm::vec3 normal(0.0f);
-    float epsilon = 0.001f; // Small value to handle floating-point imprecision
+    float epsilon = 0.001f;
     bool top = false;
 
     if (fabs(point.x - minBounds.x) < epsilon) normal.x = -1.0f;
@@ -50,17 +49,11 @@ public:
 
     if (normal.y > 0) top = true;
 
-    // Adjust normal for refraction (only when exiting the object)
     if (glm::dot(rayDirection, normal) > 0) {
       normal = -normal;
     }
 
-    // Calculate texture coordinates
     glm::vec3 hitVector = point - minBounds;
-/*
-    float u = hitVector.x / sideLength;
-    float v = hitVector.y / sideLength;*/
-
     glm::vec2 texCoord(0.0f);
 
     if (normal.x != 0) {
@@ -81,8 +74,6 @@ public:
     {
       texCoord = glm::vec2(1.0f) - texCoord;
     }
-
-    //std::cout<<"u: "<<u<<" v: "<<v<<"\n";
 
     return Intersect{true, dist, point, glm::normalize(normal), texCoord, top};
   }

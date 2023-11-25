@@ -205,8 +205,23 @@ struct Material {
         10.0f,
         0.0f,
         0.5f,
-        0.5f,
+        0.3f,
         "lamp",
         "lamp",
         glm::vec2(128, 128),
     };
+
+    Material grass_block = {
+      Color(80, 0, 0),   // diffuse
+      0.9,
+      0.1,
+      10.0f,
+      0.0f,
+      0.0f,
+      0.0f,
+      "grass_side",
+      "grass_top",
+      glm::vec2(128, 128),
+    };
+
+std::vector<Material> matVec;
