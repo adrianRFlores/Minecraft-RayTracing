@@ -34,3 +34,7 @@ Las características físicas de los materiales incluyen:
 Materiales como el agua y la lámpara están configurados con un índice de refracción realista, correspondiente a sus contrapartes en la vida real.
 
 ![adobe](https://github.com/adrianRFlores/Minecraft-RayTracing/assets/84111818/c363ac3f-7706-48d3-8194-9f709c706f67)
+
+## Compilar
+Utilizar MinGW con ``mingw32-make.exe`` dentro del directorio del Makefile. SDL, SDL_image, SDL_Mixer y GLM vienen empacados dentro de la carpeta src.
+``mingw32-pthreads-w32`` debe estar instalado en MinGW para poder utilizar threading.
