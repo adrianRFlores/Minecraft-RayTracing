@@ -1,5 +1,7 @@
 # Minecraft-RayTracing
 
+![image](https://github.com/adrianRFlores/Minecraft-RayTracing/assets/84111818/ce954c56-3594-4d01-8f22-b13f541d2d7e)
+
 ## Características
 
 ### Rotación del diorama y acercamiento/alejamiento de la cámara
